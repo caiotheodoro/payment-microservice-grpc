@@ -1,0 +1,24 @@
+syntax  = "proto3";
+package payments;
+
+
+
+service Click2Pay {
+rpc SendPayment (Click2PayPaymentRequest) returns (Click2PayPaymentResponse);
+}
+
+
+
+
+message Click2PayPaymentRequest {
+  string from_addr= 1;
+  string to_addr = 2;
+  uint32 amount = 3;
+
+}
+
+
+message Click2PayPaymentResponse {
+  bool successful = 1;
+  string message = 2;
+}
